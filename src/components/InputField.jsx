@@ -1,4 +1,6 @@
 
+import { useState } from "react";
+
 export default function InputField({
   label,
   name,
@@ -7,7 +9,9 @@ export default function InputField({
   error,
   type = "text"
 }) {
+  const [touched, setTouched] = useState(false);
   const errorId = `${name}-error`;
+  const showError = touched && Boolean(error);
 
   return (
     <div className="form-field">
@@ -19,12 +23,19 @@ export default function InputField({
         type={type}
         value={value}
         onChange={onChange}
-        aria-invalid={Boolean(error)}
-        aria-describedby={error ? errorId : undefined}
+        onBlur={() => setTouched(true)}
+        aria-invalid={showError}
+        aria-describedby={
+          showError ? errorId : undefined
+        }
       />
 
-      {error && (
-        <p id={errorId} className="error-message">
+      {showError && (
+        <p
+          id={errorId}
+          className="error-message"
+          role="alert"
+        >
           {error}
         </p>
       )}
