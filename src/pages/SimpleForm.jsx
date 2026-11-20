@@ -1,6 +1,10 @@
 
 import { FormProvider, useFormContext } from "../context/FormContext";
 import InputField from "../components/InputField";
+import ShowData from "../components/ShowData";
+
+// Exercise 1.3 - Sprint 2
+// Context-driven Form Validation
 
 function FormContent() {
   const {
@@ -12,10 +16,12 @@ function FormContent() {
     submittedData
   } = useFormContext();
 
+  // Update form values
   function handleChange(event) {
     updateField(event.target.name, event.target.value);
   }
 
+  // Submit form without page reload
   function handleSubmit(event) {
     event.preventDefault();
     submitForm();
@@ -33,6 +39,7 @@ function FormContent() {
         <InputField
           label="Full Name"
           name="name"
+          type="text"
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
@@ -47,20 +54,21 @@ function FormContent() {
           error={errors.email}
         />
 
-        <button type="submit" disabled={!isValid}>
+        <button
+          type="submit"
+          disabled={!isValid}
+        >
           Submit
         </button>
       </form>
 
-      {submittedData && (
-        <p className="success-message" role="status">
-          Form submitted successfully!
-        </p>
-      )}
+      {/* Live JSON Inspector */}
+      <ShowData data={submittedData} />
     </section>
   );
 }
 
+// Wrap form with Context Provider
 export default function SimpleForm() {
   return (
     <FormProvider>
