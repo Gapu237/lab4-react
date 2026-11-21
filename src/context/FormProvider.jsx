@@ -1,14 +1,6 @@
 
-import {
-  createContext,
-  useContext,
-  useState
-} from "react";
-
-// Exercise 1.3 - Sprint 2
-// Shared Form Context
-
-export const FormContext = createContext(null);
+import { useState } from "react";
+import { FormContext } from "./FormContext";
 
 export function FormProvider({ children }) {
   const [formData, setFormData] = useState({
@@ -70,16 +62,4 @@ export function FormProvider({ children }) {
       {children}
     </FormContext.Provider>
   );
-}
-
-export function useFormContext() {
-  const context = useContext(FormContext);
-
-  if (!context) {
-    throw new Error(
-      "useFormContext must be used within FormProvider"
-    );
-  }
-
-  return context;
 }

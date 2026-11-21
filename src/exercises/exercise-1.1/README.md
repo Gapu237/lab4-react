@@ -2,9 +2,10 @@
 
 ## Description
 React.lazy, Suspense, Skeleton and route-level code splitting.
+The fallback uses the same heading and detail-row layout as the loaded view.
 
 ## Source Files
-src/App.jsx, src/components/Skeleton.jsx, src/pages/PersonDetail.jsx
+src/App.jsx, src/App.css, src/components/Skeleton.jsx, src/pages/PersonDetail.jsx
 
 ## Project
 Lab 4 - Multi-Route SPA Architecture

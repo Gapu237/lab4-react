@@ -1,32 +1,26 @@
 
 /* Exercise 1.1 - Skeleton Loading */
 
-.skeleton {
-  min-height: 180px;
-  padding: 10px;
-}
-
 .skeleton-title,
 .skeleton-line {
+  display: block;
+  height: 1lh;
+  max-width: 100%;
   background: #e2e8f0;
   border-radius: 6px;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .skeleton-title {
-  width: 65%;
-  height: 32px;
-  margin-bottom: 25px;
+  width: 13ch;
 }
 
 .skeleton-line {
-  width: 90%;
-  height: 20px;
-  margin-bottom: 16px;
+  width: 15ch;
 }
 
-.skeleton-line:last-child {
-  width: 70%;
+.skeleton dt .skeleton-line {
+  width: 5ch;
 }
 
 @keyframes pulse {
@@ -36,6 +30,20 @@
 
   50% {
     opacity: 0.4;
+  }
+}
+
+/* Exercise 1.2.2 - Master-Detail View */
+
+.people-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  .people-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

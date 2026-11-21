@@ -8,7 +8,7 @@ React + Vite + React Router v7
 ### Exercise 1.1 - Performance & Resiliency
 - React.lazy()
 - Suspense
-- Skeleton Loading
+- Skeleton Loading with the same heading and detail rows as the loaded view
 - Route-level Code Splitting
 
 [View Exercise 1.1](src/exercises/exercise-1.1/README.md)
@@ -29,7 +29,7 @@ React + Vite + React Router v7
 [View Exercise 1.2.1](src/exercises/exercise-1.2.1/README.md)
 
 ### Exercise 1.2.2 - Master-Detail View
-- CSS Grid
+- Two-column CSS Grid that stacks at viewport widths of 700px and below
 - useParams()
 - Dynamic Person Details
 - 404 Handling
@@ -48,6 +48,7 @@ React + Vite + React Router v7
 ## Project Structure
 
 - src/components - Shared React components
+- src/context - Form context, hook, and provider
 - src/pages - Application pages
 - src/data - Sample data
 - src/exercises - Documentation for each exercise

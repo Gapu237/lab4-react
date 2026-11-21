@@ -1,5 +1,6 @@
 
-import { FormProvider, useFormContext } from "../context/FormContext";
+import { useFormContext } from "../context/FormContext";
+import { FormProvider } from "../context/FormProvider";
 import InputField from "../components/InputField";
 import ShowData from "../components/ShowData";
 
